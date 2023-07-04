@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+              </li>
+  
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/room">Room</a>
+          </li>
+         
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid ">
+        <h1 style="color:aliceblue;"> Room List</h1>
+        <div class="d-flex">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success" routerLink='/room/add'> Add Room</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3" *ngIf="rooms" border=1>
+    <thead>
+        <tr>
+            
+            <th scope="col">Room_id</th>
+            <th scope="col">Room_rate</th>
+            <th scope="col">Room_status</th>
+            <th scope="col">Action</th> 
+        </tr>
+    </thead>
+    <tbody> 
+      <tbody>
+        <tr *ngFor = "let room of rooms">
+            <td>{{room.room_id}}</td>
+            <td>{{room.room_rate}}</td>
+            <td>{{room.room_status}}</td>
+           
+            <td> <button type="button" class="btn btn-primary mr-5" [routerLink]="['/room','edit',room.room_id]">View</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+<p *ngIf="!rooms || rooms.length <=0"> No Rooms found</p>
+      
+       
+ 

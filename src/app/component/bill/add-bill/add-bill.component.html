@@ -1,0 +1,31 @@
+<br><br>
+<div class="modal-body">
+
+    <form #form="ngForm" (ngSubmit)="addbill()">
+    <div class="form-group mb-3 ps-4">
+      <label for="stay_dates">Stay_days:</label>
+      <input type="number" class="form-control" id="stay_dates" name="stay_dates" [(ngModel)]="addBillRequest.stay_dates" [ngModelOptions]="{ standalone: true }">
+    </div>
+    <br>
+    <div class="form-group mb-3 ps-4">
+      <label for="room_id">Room_id:</label>
+      <input type="text" class="form-control" id="room_id" name="room_id" [(ngModel)]="addBillRequest.room_id" [ngModelOptions]="{ standalone: true }">
+    </div>
+    <br>
+    <div class="form-group mb-3 ps-4">
+      <label for="reservation_id">Reservation_id:</label>
+      <input type="text" class="form-control" id="reservation_id" name="reservation_id" [(ngModel)]="addBillRequest.reservation_id" [ngModelOptions]="{ standalone: true }">
+    </div>
+    <br>
+    <div class="form-group mb-3 ps-4">
+      <label for="amount">Total_bill :</label>
+      <input type="number"  class="form-control" id="amount">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary mt-2 mr-2" data-bs-dismiss="add" routerLink="/bill" name="addBillButton">Add</button>
+
+    <button type="button" class="btn btn-secondary mt-2 mr-2" data-bs-dismiss="close" routerLink="/bill">Close</button>
+    </form>
+  
+</div>
+<br>

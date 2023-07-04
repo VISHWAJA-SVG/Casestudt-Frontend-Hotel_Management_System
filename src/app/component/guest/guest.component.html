@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="/guest">Guest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/guest/add">Add Guest</a>
+                  </li>
+                  
+          </ul>
+        </div>
+    </div>
+  </nav>
+  
+<br>
+<h1 style="color:rgb(21, 21, 22);"> Guest List</h1>
+<br>
+<table class="table mt-3" *ngIf="guests" border=1>
+    <thead>
+        <tr>
+            
+            <th scope="col">Guest_id</th>
+            <th scope="col">E_mail</th>
+            <th scope="col">Guest_Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone_number</th>
+            <th scope="col">Action</th> 
+        </tr>
+    </thead>
+    <tbody> 
+      <tbody>
+        <tr *ngFor = "let guest of guests">
+            <td>{{guest.guest_id}}</td>
+            <td>{{guest.e_mail}}</td>
+            <td>{{guest.guest_Name}}</td>
+            <td>{{guest.gender}}</td>
+            <td>{{guest.address}}</td>
+            <td>{{guest.phone_number}}</td>
+            <td> <button type="button" class="btn btn-primary mr-5" [routerLink]="['/guest','edit',guest.guest_id]">View</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+<p *ngIf="!guests || guests.length <=0"> No Guests found</p>
+      
+       
+  

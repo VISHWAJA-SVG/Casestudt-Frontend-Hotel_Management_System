@@ -1,0 +1,37 @@
+<br>
+<h5 class="modal-title mb-3 ps-4" id="exampleModalLabel">Edit Inventory Details</h5>
+<br>
+ 
+ <div class="row">
+            <div class="col-5">
+             <form #form="ngForm" (ngSubmit)="updateInventory()">
+              
+                <div class="mb-3 ps-4">
+                  <label for="inventory_Name">Inventory_Name :</label>
+                  <input type="text"  class="form-control" id="inventory_Name" name="inventory_Name" [(ngModel)]="InventoryDetails.inventory_Name" >
+                  
+                </div>
+                
+                <div class="mb-3 ps-4">
+                  <label for="quantity">Quantity :</label>
+                  <input type="number"  class="form-control" id="quantity" name="quantity" [(ngModel)]="InventoryDetails.quantity" >
+                </div>
+                
+
+                  <div class="mb-3 ps-4">
+                    <td> <button type="submit" class="btn btn-primary mr-5">Save</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteInventory(InventoryDetails.inventory_Id)">Delete</button></td>
+                  
+                 </div>
+                </form>
+            </div>
+        </div>
+        <br>
+    
+          
+        
+
+     
+       
+             
+        

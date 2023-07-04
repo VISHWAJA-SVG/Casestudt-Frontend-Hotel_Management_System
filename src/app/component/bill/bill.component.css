@@ -1,0 +1,22 @@
+/* styles.css */
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    flex-basis: 150px; /* Adjust the width of the label as needed */
+    margin-right: 0.5rem;
+    color: #1f1e1e;
+  }
+  
+  .form-group .form-control {
+    flex: 1;
+    padding: 0.5rem;
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    border: 1px solid #333; 
+  }
+  
